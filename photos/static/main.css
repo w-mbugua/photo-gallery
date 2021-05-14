@@ -12,21 +12,21 @@ header ul {
   display: flex;
 }
 a {
-   color: white;
+  color: white;
   text-decoration: none;
 }
-a:visited {
+a:link {
   text-decoration: none;
 }
 
-header ul li {
+a {
   width: 150px;
   height: 60px;
   line-height: 60px;
   text-align: center;
   cursor: pointer;
 }
-header ul li:hover{
+a:hover{
   background: linear-gradient(#dc2424, #4a569d);
   color: #000;
 
