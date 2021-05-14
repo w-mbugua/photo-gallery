@@ -32,7 +32,23 @@ class Photos(models.Model):
     def delete_image(self):
         self.delete()
 
+    def update_image(self):
+        pass
 
+    @classmethod
+    def get_image_by_id(cls, id):
+        image = cls(pk=id)
+        return image
+
+    @classmethod
+    def filter_by_location(cls, location):
+        image = cls(location=location)
+        return image
+
+    @classmethod
+    def search_by_category(cls, category):
+        image = cls(category=category)
+        return image
 
 
 
