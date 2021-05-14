@@ -1,0 +1,33 @@
+header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  background-color: #000;
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+}
+a {
+   color: white;
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+
+header ul li {
+  width: 150px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  cursor: pointer;
+}
+header ul li:hover{
+  background: linear-gradient(#dc2424, #4a569d);
+  color: #000;
+
+}
