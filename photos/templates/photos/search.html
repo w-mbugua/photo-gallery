@@ -1,0 +1,12 @@
+{% extends 'photos/base.html'%}
+{% load cloudinary %}
+{% block content %}
+<h1 class="text-center">{{ message }}</h1>
+    {% if result_images %}
+        {% for photo in result_images %}
+            {% cloudinary photo.image format="jpg" width=300 height=300 %}
+        {% endfor %}
+    {% else %}
+    <p>No images found</p>
+    {% endif %}
+{% endblock %}

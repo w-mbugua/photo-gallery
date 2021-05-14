@@ -35,10 +35,7 @@ class Photos(models.Model):
     def update_image(self):
         pass
 
-    @classmethod
-    def get_image_by_id(cls, id):
-        image = cls(pk=id)
-        return image
+
 
     @classmethod
     def filter_by_location(cls, location):
@@ -46,9 +43,10 @@ class Photos(models.Model):
         return image
 
     @classmethod
-    def search_by_category(cls, category):
-        image = cls(category=category)
-        return image
+    def search_by_term(cls, search_term):
+        photo = cls.objects.filter(category__name=search_term)
+        return photo
+
 
 
 

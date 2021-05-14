@@ -16,15 +16,15 @@
 <body>
     <header>
             <ul>
-                <li><a href="/">Home</a></li>
+                <li><a href="{% url 'home'%}">Home</a></li>
                 <li><a href="#">Store</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
 
         </header>
     <div class="row">
-       <form>
-           <input class="inpt" type="text" placeholder="Search...">
+       <form action="{% url 'image_search' %}">
+           <input class="inpt" type="text" placeholder="Search..." role="searchbox" name="photo">
              <button type="submit" class="btn btn-outline-primary"><i class="fa fa-search"></i></button>
         </form>
     </div>
