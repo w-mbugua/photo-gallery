@@ -1,1 +1,9 @@
 {% extends 'photos/base.html'%}
+{% load cloudinary %}
+{% block content %}
+    {% if images %}
+        {% for photo in images %}
+            {% cloudinary photo.image format="jpg" width=300 height=300 %}
+        {% endfor %}
+    {% endif %}
+{% endblock %}

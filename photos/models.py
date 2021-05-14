@@ -20,13 +20,19 @@ class Photos(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     image = CloudinaryField('image')
 
+    class Meta:
+        ordering = ['date_posted']
+
     def __str__(self):
         return self.caption
 
     def save_image(self):
         self.save()
+
     def delete_image(self):
         self.delete()
+
+
 
 
 
