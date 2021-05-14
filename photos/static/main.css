@@ -31,3 +31,12 @@ header ul li:hover{
   color: #000;
 
 }
+.inpt {
+  padding: 6px;
+    margin-top: 8px;
+    margin-left: 5rem;
+    font-size: 17px;
+    width: 40rem;
+    border: none;
+    border-bottom: 2px solid black;
+}
