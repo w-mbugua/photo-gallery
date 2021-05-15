@@ -3,7 +3,8 @@ from .models import Location, Category, Photos, User
 
 class LocationModelTest(TestCase):
     def setUp(self):
-        self.new_location = Location(name="Seoul")
+        self.new_location = Location(name="Seoul", id=15)
+        self.new_location2 = Location(name="Nairobi")
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_location, Location))
@@ -13,10 +14,14 @@ class LocationModelTest(TestCase):
         locations = Location.objects.all()
         print(len(locations))
         self.assertTrue(len(locations) > 0)
+    
+    def test_delete_method(self):
+        self.new_location.delete_loc()
+        self.assertTrue(self.new_location.DoesNotExist)
 
 class CategoryModelTest(TestCase):
     def setUp(self):
-        self.new_category = Category(name="art")
+        self.new_category = Category(name="art", id=15)
     
     def test_instance(self):
         self.assertTrue(isinstance(self.new_category, Category))
@@ -26,6 +31,10 @@ class CategoryModelTest(TestCase):
         categories = Category.objects.all()
         print(len(categories))
         self.assertTrue(len(categories) > 0)
+    
+    def test_delete_method(self):
+        self.new_category.delete_cat()
+        self.assertTrue(self.new_category.DoesNotExist)
 
 
 class PhotosModelTest(TestCase):
@@ -35,7 +44,7 @@ class PhotosModelTest(TestCase):
         self.owner = User(username='picasso')
         self.owner.save()
 
-        self.new_pic = Photos(caption="christmas fun", location=self.location, owner=self.owner)
+        self.new_pic = Photos(id=15, caption="christmas fun", location=self.location, owner=self.owner)
     
     def test_instance(self):
         self.assertTrue(isinstance(self.new_pic, Photos))
@@ -45,4 +54,8 @@ class PhotosModelTest(TestCase):
         images = Photos.objects.all()
         print(len(images))
         self.assertTrue(len(images) > 0)
+    
+    def test_delete_method(self):
+        self.new_pic.delete_image()
+        self.assertTrue(self.new_pic.DoesNotExist)
 
