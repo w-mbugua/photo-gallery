@@ -1,6 +1,13 @@
 {% extends 'photos/base.html'%}
 {% load cloudinary %}
+
 {% block content %}
+<div class="row">
+  <form action="{% url 'image_search' %}">
+      <input class="inpt" type="text" placeholder="Search..." role="searchbox" name="photo">
+        <button type="submit" class="btn btn-outline-primary"><i class="fa fa-search"></i></button>
+   </form>
+</div>
     {% if images %}
         <div class="container display">
                <div class="image_container">

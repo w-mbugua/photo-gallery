@@ -14,21 +14,24 @@
     <link rel="stylesheet" href="{% static 'main.css' %}">
 </head>
 <body>
-    <header>
+    <!-- <header>
             <ul>
                 <a href="{% url 'home'%}">Home</a>
                 <a href="#">Store</a>
                 <a href="#">Contact</a>
             </ul>
 
-        </header>
-    <div class="row">
-       <form action="{% url 'image_search' %}">
-           <input class="inpt" type="text" placeholder="Search..." role="searchbox" name="photo">
-             <button type="submit" class="btn btn-outline-primary"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
+        </header> -->
+    <div class="sidebar">
+        <a class="active" href="{% url 'home' %}">Home</a>
+        <a href="{% url 'category_search' categ='architecture' %}">Architecture</a>
+        <a href="{% url 'category_search' categ='books' %}">Books</a>
+        <a href="{% url 'category_search' categ='food' %}">Food</a>
+        <a href="{% url 'category_search' categ='home' %}">Home</a>
+        <a href="{% url 'category_search' categ='nature' %}">Nature</a>
+      </div>
         {% block content %}
+     
 
         {% endblock %}
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

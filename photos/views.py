@@ -9,9 +9,10 @@ def home(request):
 
 def image_search(request):
     keyword = request.GET.get('photo')
-    result_images = Photos.search_by_term(keyword)
+    images = Photos.search_by_term(keyword)
     message = f"{keyword}".capitalize()
-    return render(request, 'photos/search.html', {"message": message, "result_images": result_images})
+    return render(request, 'photos/search.html', {"message": message, "images": images})
+
 
 
 

@@ -27,8 +27,7 @@ a {
   cursor: pointer;
 }
 a:hover{
-  background: linear-gradient(#dc2424, #4a569d);
-  color: #000;
+  color: lightcoral;
 
 }
 .inpt {
@@ -46,6 +45,9 @@ a:hover{
   flex-wrap: wrap;
 
 }
+.display{
+  margin-left: 200px;
+}
 
 .image_container > img {
   max-width: 100%;
@@ -59,4 +61,47 @@ a:hover{
 .modal_image {
   width: 100%;
   height: 500px;
+}
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  /* background-color: cornsilk; */
+  color: #786F52;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: black;
+  color: wheat;
+}
+
+.sidebar a:hover:not(.active) {
+  /* background-color: black; */
+  color: lightcoral;
+}
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
 }
