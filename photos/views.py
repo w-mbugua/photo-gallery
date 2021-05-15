@@ -13,6 +13,9 @@ def image_search(request):
     message = f"{keyword}".capitalize()
     return render(request, 'photos/search.html', {"message": message, "images": images})
 
+def category_search(request, categ):
+    images = Photos.search_by_term(categ)
+    return render(request, 'photos/search.html', {"images": images})
 
 
 
