@@ -2,8 +2,52 @@
 {% load cloudinary %}
 {% block content %}
     {% if images %}
-        {% for photo in images %}
-            {% cloudinary photo.image format="jpg" width=300 height=300 %}
-        {% endfor %}
+        <div class="container display">
+               <div class="image_container">
+                {% for photo in images %}
+                <p data-toggle="modal" data-target="#photoModal{{ photo.id }}">
+                {% cloudinary photo.image format="jpg" class="cloud" %}
+                </p>
+                 <!-- Modal -->
+                 <div class="modal fade" id="photoModal{{ photo.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">{{ photo.caption }}</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <!-- body -->
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        {% cloudinary photo.image format="jpg" class="modal_image"%}
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h3>Description</h3> <br>
+                                        <p>
+                                            {{ photo.caption }}
+                                            <small class="text-muted">Posted {{ photo.date_posted }}</small>
+                                        </p>
+                                        <p><i class="fa fa-map-marker"></i>{{ photo.location }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                                    
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                 <!-- end of modal -->
+                {% endfor %}
+               </div>
+               
+        </div>
+       
     {% endif %}
 {% endblock %}

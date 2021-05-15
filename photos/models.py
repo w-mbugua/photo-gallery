@@ -21,7 +21,7 @@ class Photos(models.Model):
     image = CloudinaryField('image')
 
     class Meta:
-        ordering = ['date_posted']
+        ordering = ['id']
 
     def __str__(self):
         return self.caption

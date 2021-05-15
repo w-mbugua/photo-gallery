@@ -3,7 +3,7 @@ from .models import Photos
 # from  django.http import HttpResponse
 
 def home(request):
-    images = Photos.objects.all()
+    images = Photos.objects.all().order_by('-id')
     return render(request, 'photos/home.html', {"images": images})
 
 def image_search(request):

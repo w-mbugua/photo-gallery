@@ -40,3 +40,23 @@ a:hover{
     border: none;
     border-bottom: 2px solid black;
 }
+.image_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+.image_container > img {
+  max-width: 100%;
+  margin: 1rem;
+}
+.cloud {
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+}
+.modal_image {
+  width: 100%;
+  height: 500px;
+}
