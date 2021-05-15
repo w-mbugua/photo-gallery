@@ -64,6 +64,7 @@ class Photos(models.Model):
     def update_image(self, caption, location, owner):
         self.caption = caption
         self.location = location
+
         self.owner = owner
         
     @classmethod
