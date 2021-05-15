@@ -1,16 +1,41 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+
+
 class Location(models.Model):
     name = models.CharField(max_length=100)
+
     def __str__(self):
         return self.name
+    
+    def save_image(self):
+        self.save()
+
+    def delete_image(self):
+        self.delete()
+
+    def update_location(self, new_name):
+        updated_category = Location.objects.filter(id = self.id).update(name = new_name)
+        return updated_category
+
 
 class Category(models.Model):
     name = models.CharField(max_length=50)
 
     def __str__(self):
         return self.name
+    
+    def save_image(self):
+        self.save()
+
+    def delete_image(self):
+        self.delete()
+
+    def update_category(self, new_name):
+        updated_category = Category.objects.filter(id = self.id).update(name = new_name)
+        return updated_category
+
 
 class Photos(models.Model):
     caption = models.CharField(max_length=200)
