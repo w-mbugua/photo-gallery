@@ -29,9 +29,11 @@
                                         <h3>Description</h3> <br>
                                         <p>
                                             {{ photo.caption }}
+                                            {{ photo.image.url }}
                                             <small class="text-muted">Posted {{ photo.date_posted }}</small>
                                         </p>
                                         <p><i class="fa fa-map-marker"></i>{{ photo.location }}</p>
+                                        <input class="btn btn-outline-success" value="Copy Image Link" name='copy'>
                                     </div>
                                 </div>
                             </div>

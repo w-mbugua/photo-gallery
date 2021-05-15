@@ -23,6 +23,13 @@ class Photos(models.Model):
     class Meta:
         ordering = ['id']
 
+    def __unicode__(self):
+        try:
+            public_id = self.image.public_id
+        except AttributeError:
+            public_id = ''
+        return "Photo <%s:%s>" % (self.title, public_id)
+
     def __str__(self):
         return self.caption
 
@@ -32,14 +39,13 @@ class Photos(models.Model):
     def delete_image(self):
         self.delete()
 
-    def update_image(self):
-        pass
-
-
+    def update_image(self, new):
+        updated_image = Photos.objects.filter(id = self.id).update(caption = new.caption, location = new.location, category = new.category, owner = new.owner)
+        return updated_image
 
     @classmethod
     def filter_by_location(cls, location):
-        image = cls(location=location)
+        image = cls.objects.filter(location__name=location)
         return image
 
     @classmethod
