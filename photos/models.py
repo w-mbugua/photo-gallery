@@ -9,10 +9,10 @@ class Location(models.Model):
     def __str__(self):
         return self.name
     
-    def save_image(self):
+    def save_loc(self):
         self.save()
 
-    def delete_image(self):
+    def delete_loc(self):
         self.delete()
 
     def update_location(self, new_name):
@@ -26,10 +26,10 @@ class Category(models.Model):
     def __str__(self):
         return self.name
     
-    def save_image(self):
+    def save_cat(self):
         self.save()
 
-    def delete_image(self):
+    def delete_cat(self):
         self.delete()
 
     def update_category(self, new_name):
