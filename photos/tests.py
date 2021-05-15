@@ -18,6 +18,11 @@ class LocationModelTest(TestCase):
     def test_delete_method(self):
         self.new_location.delete_loc()
         self.assertTrue(self.new_location.DoesNotExist)
+    
+    def test_update_method(self):
+        self.new_location.update_location('Tokyo')
+        self.assertEqual(self.new_location.name, 'Tokyo')
+
 
 class CategoryModelTest(TestCase):
     def setUp(self):
@@ -35,6 +40,10 @@ class CategoryModelTest(TestCase):
     def test_delete_method(self):
         self.new_category.delete_cat()
         self.assertTrue(self.new_category.DoesNotExist)
+    
+    def test_update_method(self):
+        self.new_category.update_category('music')
+        self.assertEqual(self.new_category.name, 'music')
 
 
 class PhotosModelTest(TestCase):
@@ -58,4 +67,12 @@ class PhotosModelTest(TestCase):
     def test_delete_method(self):
         self.new_pic.delete_image()
         self.assertTrue(self.new_pic.DoesNotExist)
+    
+    def test_update_method(self):
+        new_location = Location(name='Accra')
+        new_owner = User(username='vincent')
+        self.new_pic.update_image('New Year"s fun', new_location, new_owner)
+        self.assertEqual(self.new_pic.caption, 'New Year"s fun')
+        self.assertEqual(self.new_pic.location, new_location)
+        self.assertEqual(self.new_pic.owner, new_owner)
 
