@@ -1,4 +1,4 @@
-# ![GalleryApp]()
+# ![GalleryApp](https://github.com/JoyMbugua/photo-gallery/blob/master/staticfiles/staticimages/photogalleryapp.png)
 
 # GalleryApp
 
