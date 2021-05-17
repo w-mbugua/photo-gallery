@@ -49,7 +49,6 @@ If you'd like to request a new function, feel free to do so by opening an issue 
 - [Cloudinary](https://cloudinary.com/documentation/django_image_and_video_upload#django_forms_and_models) - image hosting cloud platform
 - [Bootstrap](https://getbootstrap.com/docs/4.6/getting-started/introduction/) - Extensive list of components and Bundled Javascript plugins.
 
-                                                                          |
 
 ## [License](https://github.com/JoyMbugua/photo-gallery/blob/master/LICENSE)
 
