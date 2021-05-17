@@ -14,7 +14,7 @@
              <div class="modal-dialog modal-lg">
                <div class="modal-content">
                  <div class="modal-header">
-                   <h5 class="modal-title" id="exampleModalLabel">{{ photo.caption }}</h5>
+                   <h5 class="modal-title" id="exampleModalLabel">{{ photo.category|title }}</h5>
                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                      <span aria-hidden="true">&times;</span>
                    </button>
@@ -30,11 +30,13 @@
                                  <h3>Description</h3> <br>
                                  <p>
                                      {{ photo.caption }}
-                                     {{ photo.image.url }}
-                                     <small class="text-muted">Posted {{ photo.date_posted }}</small>
+                                     
+                                     <small class="text-muted">Posted {{ photo.date_posted|date }}</small>
                                  </p>
+                                 {% if photo.location != None %}
                                  <p><i class="fa fa-map-marker"></i>{{ photo.location }}</p>
-                                 <input class="btn btn-outline-success" value="Copy Image Link" name='copy'>
+                                 {% endif %}
+                                 <!-- <input class="btn btn-outline-success" value="Copy Image Link" name='copy'> -->
                              </div>
                          </div>
                      </div>

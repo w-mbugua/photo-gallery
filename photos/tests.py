@@ -76,8 +76,4 @@ class PhotosModelTest(TestCase):
         self.assertEqual(self.new_pic.location, new_location)
         self.assertEqual(self.new_pic.owner, new_owner)
     
-    def test_filter_by_location(self):
-        images = Photos.filter_by_location('Kenya')
-        self.assertTrue(len(images) > 0)
-     
 
