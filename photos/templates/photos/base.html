@@ -16,14 +16,14 @@
 <body>
     <!-- <header>
             <ul>
-                <a href="{% url 'home'%}">Home</a>
+                <a class="active" href="{% url 'home'%}">Home</a>
                 <a href="#">Store</a>
                 <a href="#">Contact</a>
             </ul>
 
         </header> -->
     <div class="sidebar">
-        <a class="active" href="{% url 'home' %}">Home</a>
+        <a class="active" href="{% url 'home' %}">All</a>
         <a href="{% url 'category_search' categ='architecture' %}">Architecture</a>
         <a href="{% url 'category_search' categ='books' %}">Books</a>
         <a href="{% url 'category_search' categ='food' %}">Food</a>

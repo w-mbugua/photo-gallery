@@ -14,7 +14,7 @@ def image_search(request):
     return render(request, 'photos/search.html', {"message": message, "images": images})
 
 def category_search(request, categ):
-    images = Photos.search_by_term(categ)
+    images = Photos.search_by_term(categ).order_by('-id')
     return render(request, 'photos/search.html', {"images": images})
 
 
