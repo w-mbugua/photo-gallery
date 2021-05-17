@@ -1,11 +1,11 @@
-# ![GalleryApp](https://github.com/JoyMbugua/photo-gallery/blob/master/staticfiles/staticimages/photogalleryapp.png)
+# ![GalleryApp](https://github.com/JoyMbugua/photo-gallery/blob/master/staticfiles/staticimages/photogalleryapp.jpg)
 
 # GalleryApp
 
 <table>
 <tr>
 <td>
-  A webapp that enables users to upload and showcase their images.
+  A webapp that enables users to upload and showcase their images for others to see.
 </td>
 </tr>
 </table>
@@ -51,6 +51,6 @@ If you'd like to request a new function, feel free to do so by opening an issue 
 
                                                                           |
 
-## [License]()
+## [License](https://github.com/JoyMbugua/photo-gallery/blob/master/LICENSE)
 
 MIT © [Joy Mbugua ](https://github.com/JoyMbugua)
